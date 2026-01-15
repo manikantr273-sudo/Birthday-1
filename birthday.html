@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday ❤️</title>
+
+<!-- Confetti library -->
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background: linear-gradient(120deg, #ff9a9e, #fad0c4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Arial', sans-serif;
+    overflow: hidden;
+}
+
+.card {
+    background: white;
+    border-radius: 25px;
+    padding: 25px;
+    text-align: center;
+    width: 90%;
+    max-width: 350px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    animation: pop 1s ease;
+}
+
+@keyframes pop {
+    0% { transform: scale(0); }
+    100% { transform: scale(1); }
+}
+
+h1 {
+    color: #ff4081;
+    margin: 15px 0 5px 0;
+}
+
+h2 {
+    color: #ff7f50;
+    margin: 5px 0 15px 0;
+}
+
+p {
+    font-size: 16px;
+    color: #444;
+    margin: 10px 0;
+}
+
+button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    border: none;
+    background: #ff4081;
+    color: white;
+    border-radius: 20px;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+}
+
+button:hover {
+    background: #ff79a9;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+    <h1>Happy Birthday 🎂</h1>
+    <h2 id="names">❤️ [Manikant raj] & [--------] ❤️</h2>
+    <p id="msg"></p>
+    <button onclick="surprise()">Click for Surprise 💖</button>
+</div>
+
+<script>
+function surprise() {
+    // Show message
+    document.getElementById("msg").innerHTML =
+        "Tum meri life ka sabse beautiful surprise ho 💕<br>Hamesha khush raho 😊🎉";
+
+    // Confetti animation
+    confetti({
+        particleCount: 100,
+        spread: 70,
+        origin: { y: 0.6 }
+    });
+
+    confetti({
+        particleCount: 50,
+        spread: 100,
+        origin: { y: 0.6 }
+    });
+}
+</script>
+
+</body>
+</html>
